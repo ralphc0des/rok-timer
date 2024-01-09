@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <title>Timer | ROK</title>
+    <style>
+        body{
+            background-color: red;
+        }
+        .Timer{
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 200px;
+            margin-left: 190px;
+        }
+        button{
+            width: 60px;
+            height: 60px;
+            font-size: 40px;
+            border-radius: 2px;
+        }
+        strong{
+            color: white;
+        }
+        p{
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>ROK Timer</p>
+
+    <div class="Timer">
+    <button class="hour">00</button><strong>HRS</strong>
+    <button class="mins">00</button><strong>MINS</strong>
+    <button class="sec">00</button><strong>SEC</strong>
+    </div>
+</body>
+
+<script>
+    const now = new Date();
+    let hr = now.getHours();
+    let ms = now.getMinutes();
+    let sc = now.getSeconds();
+   
+    const hours = document.querySelector('.hour');
+    const minutes = document.querySelector('.mins');
+    const seconds = document.querySelector('.sec');
+
+setInterval(function(){
+    const now = new Date();
+    let hr = now.getHours();
+    let ms = now.getMinutes();
+    let sc = now.getSeconds(); 
+
+    hours.innerHTML = `${hr}`; 
+    minutes.innerHTML = `${ms}`;
+    seconds.innerHTML = `${sc}`
+    },1000);
+
+</script>
+</html>
